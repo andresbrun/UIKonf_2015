@@ -9,7 +9,7 @@
 import Foundation
 
 class APIClient {
-    func request(success: ((NSData, NSURLResponse) -> Void)?, failure: ((NSError?) -> Void)?) {
+    func request(request: NSURLRequest, success: ((NSData, NSHTTPURLResponse?) -> Void)?, failure: ((NSError) -> Void)?) {
         let basicAuthString = "APP_TOKEN" + ":" + "SESSION_TOKEN"
         let basicAuthData = basicAuthString.dataUsingEncoding(NSUTF8StringEncoding)
         let base64EncodedCredential = basicAuthData!.base64EncodedStringWithOptions(nil)
@@ -32,12 +32,16 @@ class APIClient {
             if (error != nil) {
                 println(error)
                 
-                if (failure != nil) {
-                    failure(error)
+                if let failureBlock = failure {
+                    failureBlock(error)
                 }
             } else {
                 let httpResponse = response as? NSHTTPURLResponse
                 println(httpResponse)
+                
+                if let successBlock = success {
+                    successBlock(data, httpResponse)
+                }
             }
         })
         
