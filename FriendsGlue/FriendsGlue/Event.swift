@@ -16,6 +16,9 @@ struct Event {
     let latitude: Float?
     let longitude: Float?
     
+    var date: NSDate?
+    var friends: [APContact]
+    
     static func eventFrom(#dictionary: Dictionary<String, AnyObject>) -> Event {
         let id = dictionary["id"] as! Int
         let userID = dictionary["user_id"] as! Int
@@ -24,6 +27,6 @@ struct Event {
         let latitude = dictionary["latitude"] as? Float
         let longitude = dictionary["longitude"] as? Float
         
-        return Event(uid: id, userID: userID, verb: verb, locationName: locationName, latitude: latitude, longitude: longitude)
+        return Event(uid: id, userID: userID, verb: verb, locationName: locationName, latitude: latitude, longitude: longitude, date: nil, friends: [])
     }
 }
