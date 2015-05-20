@@ -42,8 +42,13 @@ class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITex
         }
         
         if textField == whoTextField {
-            performSegueWithIdentifier("showFriendList", sender: self) 
+            performSegueWithIdentifier("showFriends", sender: self)
         }
+        
+        if textField == whereTextfFeld {
+            performSegueWithIdentifier("showMap", sender: self)
+        }
+
         
         return false
     }
@@ -58,10 +63,24 @@ class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITex
         
         let formatter = NSDateFormatter()
         formatter.dateStyle = .ShortStyle
-        formatter.timeStyle = .MediumStyle
+        formatter.timeStyle = .ShortStyle
 
         whenTextField.text = formatter.stringFromDate(datePicker.date)
         whenTextField.resignFirstResponder()
     }
 
+    @IBAction func cancel(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    @IBAction func save(sender: AnyObject) {
+        
+        // Create event
+        
+        // Alert
+        UIAlertView(title: "Yeah!", message: "The event was created!", delegate: nil, cancelButtonTitle: "Thanks!").show()
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }
