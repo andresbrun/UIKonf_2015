@@ -100,7 +100,12 @@ class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITex
         
         if let locationVC = segue.destinationViewController as? MapLocationViewController {
             locationVC.whatContext = eventData.verb
-            locationVC.successClosure = { }
+            locationVC.successClosure = { address, location in
+                self.eventData.locationName = address
+                self.eventData.latitude = Float(location.coordinate.latitude)
+                self.eventData.longitude = Float(location.coordinate.longitude)
+                self.whereTextfFeld.text = address
+            }
         }
     }
 }

@@ -29,6 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let textTitleOptions = [NSForegroundColorAttributeName : UIColor.cDarkBlue()]
         UINavigationBar.appearance().titleTextAttributes = textTitleOptions
         
+        UIToolbar.appearance().tintColor = UIColor.cGrey()
+        UIBarButtonItem.appearance().tintColor = UIColor.cDarkBlue()
+        
         return true
     }
     

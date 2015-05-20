@@ -128,13 +128,13 @@
                                                     <exclude reference="r3I-ig-f8r"/>
                                                     <exclude reference="z1B-rT-Qp5"/>
                                                     <exclude reference="tJp-PP-x9B"/>
+                                                    <exclude reference="5DC-c9-RR1"/>
+                                                    <exclude reference="Rre-22-kwH"/>
+                                                    <exclude reference="a5T-Hl-pPT"/>
                                                     <exclude reference="QFg-Df-fRl"/>
                                                     <exclude reference="fwZ-zP-uxD"/>
                                                     <exclude reference="iAl-o5-wAO"/>
                                                     <exclude reference="zRL-yI-1oJ"/>
-                                                    <exclude reference="5DC-c9-RR1"/>
-                                                    <exclude reference="Rre-22-kwH"/>
-                                                    <exclude reference="a5T-Hl-pPT"/>
                                                     <exclude reference="Q65-ha-REg"/>
                                                     <exclude reference="6dE-lh-tmF"/>
                                                     <exclude reference="UeL-M9-OTj"/>
@@ -242,7 +242,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select a location" id="ZiK-sX-cDC">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="JTf-Lx-qCq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="JTf-Lx-qCq">
+                            <connections>
+                                <action selector="done:" destination="q3Q-1h-3ZJ" id="BUg-Hh-g1t"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="7NR-lY-cWb" id="i0j-f6-PJ9"/>
