@@ -62,21 +62,17 @@ class APIClient {
             }, failure: failure)
     }
     
-    func createEvent(event: Event, success: ((event: Event) -> Void), failure: ((AnyObject)? -> Void)?) {
+    func createEvent(event: Event, success: ((event: Event?) -> Void), failure: ((AnyObject)? -> Void)?) {
         let urlRequest = authenticatedMutableURLRequest("https://api.tapglue.com/0.2/user/events", parameters: event.tapGlueDistantDictionary(), httpMethod: "POST")
         
         request(urlRequest, success: { [unowned self] (json, response) -> Void in
             if let jsonValue = json as? Dictionary<String, AnyObject> {
-//                if let session = jsonValue["session_token"] as? String {
-//                    self.sessionToken = session
-//                    println("token \(self.sessionToken)")
-//                }
-//                else {
-//                    println("no token...")
-//                }
+                let e = Event.eventFrom(json: jsonValue)
+                success(event: e)
             }
-            success(event: event)
-            }, failure: failure)
+            else {
+                success(event: nil)
+            }}, failure: failure)
     }
     
     private func request(request: NSURLRequest, success: ((json: AnyObject?, response: NSHTTPURLResponse?) -> Void)?, failure: ((AnyObject)? -> Void)?) {
