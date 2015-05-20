@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DD52EAB71B0C862400E2637A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EAB61B0C862400E2637A /* AppDelegate.swift */; };
+		DD52EAB91B0C862400E2637A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EAB81B0C862400E2637A /* ViewController.swift */; };
+		DD52EABC1B0C862400E2637A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD52EABA1B0C862400E2637A /* Main.storyboard */; };
+		DD52EABE1B0C862400E2637A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD52EABD1B0C862400E2637A /* Images.xcassets */; };
+		DD52EAC11B0C862400E2637A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD52EABF1B0C862400E2637A /* LaunchScreen.xib */; };
+		DD52EACD1B0C862400E2637A /* FriendsGlueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EACC1B0C862400E2637A /* FriendsGlueTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DD52EAC71B0C862400E2637A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD52EAA91B0C862400E2637A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD52EAB01B0C862400E2637A;
+			remoteInfo = FriendsGlue;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DD52EAB11B0C862400E2637A /* FriendsGlue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendsGlue.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD52EAB51B0C862400E2637A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD52EAB61B0C862400E2637A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DD52EAB81B0C862400E2637A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD52EABB1B0C862400E2637A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DD52EABD1B0C862400E2637A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DD52EAC01B0C862400E2637A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		DD52EAC61B0C862400E2637A /* FriendsGlueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FriendsGlueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD52EACB1B0C862400E2637A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD52EACC1B0C862400E2637A /* FriendsGlueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsGlueTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD52EAAE1B0C862400E2637A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD52EAC31B0C862400E2637A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DD52EAA81B0C862400E2637A = {
+			isa = PBXGroup;
+			children = (
+				DD52EAB31B0C862400E2637A /* FriendsGlue */,
+				DD52EAC91B0C862400E2637A /* FriendsGlueTests */,
+				DD52EAB21B0C862400E2637A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DD52EAB21B0C862400E2637A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD52EAB11B0C862400E2637A /* FriendsGlue.app */,
+				DD52EAC61B0C862400E2637A /* FriendsGlueTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD52EAB31B0C862400E2637A /* FriendsGlue */ = {
+			isa = PBXGroup;
+			children = (
+				DD52EAB61B0C862400E2637A /* AppDelegate.swift */,
+				DD52EAB81B0C862400E2637A /* ViewController.swift */,
+				DD52EABA1B0C862400E2637A /* Main.storyboard */,
+				DD52EABD1B0C862400E2637A /* Images.xcassets */,
+				DD52EABF1B0C862400E2637A /* LaunchScreen.xib */,
+				DD52EAB41B0C862400E2637A /* Supporting Files */,
+			);
+			path = FriendsGlue;
+			sourceTree = "<group>";
+		};
+		DD52EAB41B0C862400E2637A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DD52EAB51B0C862400E2637A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DD52EAC91B0C862400E2637A /* FriendsGlueTests */ = {
+			isa = PBXGroup;
+			children = (
+				DD52EACC1B0C862400E2637A /* FriendsGlueTests.swift */,
+				DD52EACA1B0C862400E2637A /* Supporting Files */,
+			);
+			path = FriendsGlueTests;
+			sourceTree = "<group>";
+		};
+		DD52EACA1B0C862400E2637A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DD52EACB1B0C862400E2637A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DD52EAB01B0C862400E2637A /* FriendsGlue */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD52EAD01B0C862400E2637A /* Build configuration list for PBXNativeTarget "FriendsGlue" */;
+			buildPhases = (
+				DD52EAAD1B0C862400E2637A /* Sources */,
+				DD52EAAE1B0C862400E2637A /* Frameworks */,
+				DD52EAAF1B0C862400E2637A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FriendsGlue;
+			productName = FriendsGlue;
+			productReference = DD52EAB11B0C862400E2637A /* FriendsGlue.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DD52EAC51B0C862400E2637A /* FriendsGlueTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD52EAD31B0C862400E2637A /* Build configuration list for PBXNativeTarget "FriendsGlueTests" */;
+			buildPhases = (
+				DD52EAC21B0C862400E2637A /* Sources */,
+				DD52EAC31B0C862400E2637A /* Frameworks */,
+				DD52EAC41B0C862400E2637A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD52EAC81B0C862400E2637A /* PBXTargetDependency */,
+			);
+			name = FriendsGlueTests;
+			productName = FriendsGlueTests;
+			productReference = DD52EAC61B0C862400E2637A /* FriendsGlueTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DD52EAA91B0C862400E2637A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Andres Brun Moreno";
+				TargetAttributes = {
+					DD52EAB01B0C862400E2637A = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					DD52EAC51B0C862400E2637A = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = DD52EAB01B0C862400E2637A;
+					};
+				};
+			};
+			buildConfigurationList = DD52EAAC1B0C862400E2637A /* Build configuration list for PBXProject "FriendsGlue" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DD52EAA81B0C862400E2637A;
+			productRefGroup = DD52EAB21B0C862400E2637A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DD52EAB01B0C862400E2637A /* FriendsGlue */,
+				DD52EAC51B0C862400E2637A /* FriendsGlueTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD52EAAF1B0C862400E2637A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD52EABC1B0C862400E2637A /* Main.storyboard in Resources */,
+				DD52EAC11B0C862400E2637A /* LaunchScreen.xib in Resources */,
+				DD52EABE1B0C862400E2637A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD52EAC41B0C862400E2637A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD52EAAD1B0C862400E2637A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD52EAB91B0C862400E2637A /* ViewController.swift in Sources */,
+				DD52EAB71B0C862400E2637A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD52EAC21B0C862400E2637A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD52EACD1B0C862400E2637A /* FriendsGlueTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DD52EAC81B0C862400E2637A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD52EAB01B0C862400E2637A /* FriendsGlue */;
+			targetProxy = DD52EAC71B0C862400E2637A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DD52EABA1B0C862400E2637A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD52EABB1B0C862400E2637A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DD52EABF1B0C862400E2637A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD52EAC01B0C862400E2637A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DD52EACE1B0C862400E2637A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DD52EACF1B0C862400E2637A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DD52EAD11B0C862400E2637A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FriendsGlue/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DD52EAD21B0C862400E2637A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FriendsGlue/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DD52EAD41B0C862400E2637A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FriendsGlueTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FriendsGlue.app/FriendsGlue";
+			};
+			name = Debug;
+		};
+		DD52EAD51B0C862400E2637A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FriendsGlueTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FriendsGlue.app/FriendsGlue";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD52EAAC1B0C862400E2637A /* Build configuration list for PBXProject "FriendsGlue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD52EACE1B0C862400E2637A /* Debug */,
+				DD52EACF1B0C862400E2637A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD52EAD01B0C862400E2637A /* Build configuration list for PBXNativeTarget "FriendsGlue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD52EAD11B0C862400E2637A /* Debug */,
+				DD52EAD21B0C862400E2637A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DD52EAD31B0C862400E2637A /* Build configuration list for PBXNativeTarget "FriendsGlueTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD52EAD41B0C862400E2637A /* Debug */,
+				DD52EAD51B0C862400E2637A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DD52EAA91B0C862400E2637A /* Project object */;
+}
