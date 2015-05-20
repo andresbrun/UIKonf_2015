@@ -9,7 +9,7 @@
 import Foundation
 
 struct User {
-    let uid: Int
+    let distantID: Int
     let firstName: String?
     let lastName: String?
     let email: String
@@ -20,7 +20,7 @@ struct User {
         let firstName = dictionary["first_name"] as? String
         let lastName = dictionary["last_name"] as? String
         
-        return User(uid: id, firstName: firstName, lastName: lastName, email: email)
+        return User(distantID: id, firstName: firstName, lastName: lastName, email: email)
     }
 }
 

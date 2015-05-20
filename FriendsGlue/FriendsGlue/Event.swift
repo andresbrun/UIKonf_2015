@@ -8,29 +8,80 @@
 
 import Foundation
 
+class EventHelper {
+    static var dateFormatter: NSDateFormatter {
+        var formatter = NSDateFormatter()
+        formatter.dateStyle = .FullStyle
+        return formatter
+    }
+}
+
 struct Event {
-    let uid: Int?
+    let distantID: Int?
     let userID: Int?
-    var verb: String?
-    var locationName: String?
+    var verb: String? // Event type
+    var locationName: String?  // Event location name
     var latitude: Float?
     var longitude: Float?
     
-    var date: NSDate?
-    var friends: [APContact]
+    var date: NSDate? // Event date
+    var friends: [APContact] // Friends invited
     
-    static func eventFrom(#dictionary: Dictionary<String, AnyObject>) -> Event {
-        let id = dictionary["id"] as! Int
-        let userID = dictionary["user_id"] as! Int
-        let verb = dictionary["verb"] as! String
-        let locationName = dictionary["location"] as? String
-        let latitude = dictionary["latitude"] as? Float
-        let longitude = dictionary["longitude"] as? Float
-        
-        return Event(uid: id, userID: userID, verb: verb, locationName: locationName, latitude: latitude, longitude: longitude, date: nil, friends: [])
-    }
+
     
     static func createEvent(verb: String?, locationName: String?, latitude: Float?, longitude: Float?, date: NSDate?, friends: [APContact]) -> Event {
-        return Event(uid: nil, userID: nil, verb: verb, locationName: locationName, latitude: latitude, longitude: longitude, date: date, friends: friends)
+        return Event(distantID: nil, userID: nil, verb: verb, locationName: locationName, latitude: latitude, longitude: longitude, date: date, friends: friends)
+    }
+    
+    // RECEIVE
+    static func eventFrom(#json: Dictionary<String, AnyObject>) -> Event {
+        let id = json["id"] as! Int
+        let userID = json["user_id"] as! Int
+        let verb = json["verb"] as! String
+        let locationName = json["location"] as? String
+        let latitude = json["latitude"] as? Float
+        let longitude = json["longitude"] as? Float
+        
+        var date: NSDate?
+        if let metadataValue = json["longitude"] as? Dictionary<String, AnyObject> {
+            if let dateVale = metadataValue["longitude"] as? String {
+                date = EventHelper.dateFormatter.dateFromString(dateVale)
+            }
+        }
+
+        return Event(distantID: id, userID: userID, verb: verb, locationName: locationName, latitude: latitude, longitude: longitude, date: date, friends: [])
+    }
+    
+
+    // SEND
+    func tapGlueDistantDictionary() -> Dictionary<String, AnyObject> {
+        var parameters = Dictionary<String, AnyObject>()
+        parameters["verb"] = verb
+        parameters["location"] = locationName
+        parameters["latitude"] = latitude
+        parameters["longitude"] = longitude
+        parameters["metadata"] = toTapGlueMetadata()
+        
+        println("tapGlueDistantDictionary: \(parameters)")
+        return parameters
+    }
+    
+    private func toTapGlueMetadata() -> Dictionary<String, AnyObject> {
+        var metadata = Dictionary<String, AnyObject>()
+        metadata["friendCount"] = friends.count
+//        metadata["friendIDs"] = friends.map( {
+//            if let emailValue = $0.emails[0] as? String {
+//                return emailValue
+//            }
+//            else {
+//                return ""
+//            }
+//        } )
+        
+        if let dateValue = date {
+            metadata["date"] = EventHelper.dateFormatter.stringFromDate(dateValue)
+        }
+        
+        return metadata
     }
 }

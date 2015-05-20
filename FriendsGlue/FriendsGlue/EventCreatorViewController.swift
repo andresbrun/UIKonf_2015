@@ -9,7 +9,7 @@
 import UIKit
 
 class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITextFieldDelegate {
-
+    
     @IBOutlet weak var whatTextField: UITextField!
     @IBOutlet weak var whereTextfFeld: UITextField!
     @IBOutlet weak var whenTextField: UITextField!
@@ -49,7 +49,7 @@ class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITex
         if textField == whereTextfFeld {
             performSegueWithIdentifier("showMap", sender: self)
         }
-
+        
         
         return false
     }
@@ -66,25 +66,29 @@ class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITex
         let formatter = NSDateFormatter()
         formatter.dateStyle = .ShortStyle
         formatter.timeStyle = .ShortStyle
-
+        
         eventData.date = datePicker.date
         whenTextField.text = formatter.stringFromDate(datePicker.date)
         whenTextField.resignFirstResponder()
     }
-
+    
     @IBAction func cancel(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
     
     @IBAction func save(sender: AnyObject) {
-        
         // Create event. Call API
-        
-        // Alert
-        UIAlertView(title: "Yeah!", message: "The event was created!", delegate: nil, cancelButtonTitle: "Thanks!").show()
-        
-        dismissViewControllerAnimated(true, completion: nil)
+        APIClient.sharedInstance.createEvent(eventData, success: { [unowned self] (event) -> Void in
+            println(event)
+            // Alert
+            UIAlertView(title: "Yeah!", message: "The event was created!", delegate: nil, cancelButtonTitle: "Thanks!").show()
+            self.dismissViewControllerAnimated(true, completion: nil)
+            
+            }, failure: { [unowned self] (_) -> Void in
+                // Alert
+                UIAlertView(title: "Bouh!", message: "The event was NOT created!", delegate: nil, cancelButtonTitle: "Not Thanks!").show()
+        })
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
