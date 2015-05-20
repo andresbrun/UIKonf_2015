@@ -15,6 +15,7 @@
 		DD52EACD1B0C862400E2637A /* FriendsGlueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EACC1B0C862400E2637A /* FriendsGlueTests.swift */; };
 		DD52EAD71B0C8BEF00E2637A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DD52EAD61B0C8BEF00E2637A /* Podfile */; };
 		DD52EADB1B0C8DCB00E2637A /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EADA1B0C8DCB00E2637A /* FriendsViewController.swift */; };
+		DD52EADE1B0C93D000E2637A /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EADD1B0C93D000E2637A /* FriendCell.swift */; };
 		EE69CA3D2536128A18B2E43C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC4613F5292529C3F92D003 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		DD52EAD81B0C8C9F00E2637A /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		DD52EADA1B0C8DCB00E2637A /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		DD52EADC1B0C8FA100E2637A /* FriendsGlue-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FriendsGlue-Bridging-Header.h"; sourceTree = "<group>"; };
+		DD52EADD1B0C93D000E2637A /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				DD52EABD1B0C862400E2637A /* Images.xcassets */,
 				DD52EABF1B0C862400E2637A /* LaunchScreen.xib */,
 				DD52EAB41B0C862400E2637A /* Supporting Files */,
+				DD52EADD1B0C93D000E2637A /* FriendCell.swift */,
 			);
 			path = FriendsGlue;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				DD52EAB91B0C862400E2637A /* ViewController.swift in Sources */,
 				DD52EADB1B0C8DCB00E2637A /* FriendsViewController.swift in Sources */,
 				DD52EAB71B0C862400E2637A /* AppDelegate.swift in Sources */,
+				DD52EADE1B0C93D000E2637A /* FriendCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

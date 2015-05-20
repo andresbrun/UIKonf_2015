@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sYI-p8-YH6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -69,11 +70,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Iau-Oj-fna">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="60" id="Iau-Oj-fna" customClass="FriendCell" customModule="FriendsGlue" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iau-Oj-fna" id="rsy-iu-xOK">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="friend_icon" translatesAutoresizingMaskIntoConstraints="NO" id="82B-Wc-TLd">
+                                            <rect key="frame" x="8" y="8" width="44" height="44"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Friend Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJP-i0-ncU">
+                                            <rect key="frame" x="60" y="19" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="oJP-i0-ncU" firstAttribute="leading" secondItem="82B-Wc-TLd" secondAttribute="trailing" constant="8" id="8Tm-Af-C3h"/>
+                                        <constraint firstAttribute="centerY" secondItem="82B-Wc-TLd" secondAttribute="centerY" id="Dl3-vj-fDC"/>
+                                        <constraint firstItem="82B-Wc-TLd" firstAttribute="leading" secondItem="rsy-iu-xOK" secondAttribute="leadingMargin" id="QCm-tT-3a3"/>
+                                        <constraint firstAttribute="centerY" secondItem="oJP-i0-ncU" secondAttribute="centerY" id="iVW-wo-0Qv"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="icon" destination="82B-Wc-TLd" id="vvu-Ls-jTk"/>
+                                    <outlet property="name" destination="oJP-i0-ncU" id="8N6-vy-El7"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -87,4 +109,7 @@
             <point key="canvasLocation" x="1137" y="339"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="friend_icon" width="44" height="44"/>
+    </resources>
 </document>
