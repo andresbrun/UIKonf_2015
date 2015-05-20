@@ -10,6 +10,7 @@
 		33627C6B1B0C9A870052C862 /* EventCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33627C6A1B0C9A870052C862 /* EventCellTableViewCell.swift */; };
 		33627C6D1B0C9B8C0052C862 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33627C6C1B0C9B8C0052C862 /* Event.swift */; };
 		33627C701B0C9BA40052C862 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33627C6F1B0C9BA40052C862 /* User.swift */; };
+		33627C721B0CA0E90052C862 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33627C711B0CA0E90052C862 /* APIClient.swift */; };
 		DD52EAB71B0C862400E2637A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EAB61B0C862400E2637A /* AppDelegate.swift */; };
 		DD52EAB91B0C862400E2637A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EAB81B0C862400E2637A /* ViewController.swift */; };
 		DD52EABC1B0C862400E2637A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD52EABA1B0C862400E2637A /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		33627C6A1B0C9A870052C862 /* EventCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCellTableViewCell.swift; sourceTree = "<group>"; };
 		33627C6C1B0C9B8C0052C862 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		33627C6F1B0C9BA40052C862 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		33627C711B0CA0E90052C862 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		53BC29D6561D18FCBFCF4EEF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B468C458AB36ACF3081DDCA3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DD52EAB11B0C862400E2637A /* FriendsGlue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendsGlue.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 				33627C6A1B0C9A870052C862 /* EventCellTableViewCell.swift */,
 				DD52EADA1B0C8DCB00E2637A /* FriendsViewController.swift */,
 				DD52EADD1B0C93D000E2637A /* FriendCell.swift */,
+				33627C711B0CA0E90052C862 /* APIClient.swift */,
 				33627C6E1B0C9B910052C862 /* Model */,
 				DD52EABD1B0C862400E2637A /* Images.xcassets */,
 				DD52EABA1B0C862400E2637A /* Main.storyboard */,
@@ -305,6 +308,7 @@
 				DD52EAB91B0C862400E2637A /* ViewController.swift in Sources */,
 				33627C701B0C9BA40052C862 /* User.swift in Sources */,
 				DD52EADB1B0C8DCB00E2637A /* FriendsViewController.swift in Sources */,
+				33627C721B0CA0E90052C862 /* APIClient.swift in Sources */,
 				DD52EAB71B0C862400E2637A /* AppDelegate.swift in Sources */,
 				DD52EADE1B0C93D000E2637A /* FriendCell.swift in Sources */,
 				33627C6D1B0C9B8C0052C862 /* Event.swift in Sources */,
