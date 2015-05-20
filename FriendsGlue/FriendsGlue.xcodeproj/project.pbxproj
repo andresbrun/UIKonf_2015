@@ -20,6 +20,7 @@
 		DD52EAD71B0C8BEF00E2637A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DD52EAD61B0C8BEF00E2637A /* Podfile */; };
 		DD52EADB1B0C8DCB00E2637A /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EADA1B0C8DCB00E2637A /* FriendsViewController.swift */; };
 		DD52EADE1B0C93D000E2637A /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EADD1B0C93D000E2637A /* FriendCell.swift */; };
+		DDEA13971B0CA86800673028 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA13961B0CA86800673028 /* UIColorExtensions.swift */; };
 		EE69CA3D2536128A18B2E43C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC4613F5292529C3F92D003 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		DD52EADA1B0C8DCB00E2637A /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		DD52EADC1B0C8FA100E2637A /* FriendsGlue-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FriendsGlue-Bridging-Header.h"; sourceTree = "<group>"; };
 		DD52EADD1B0C93D000E2637A /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		DDEA13961B0CA86800673028 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				DD52EABA1B0C862400E2637A /* Main.storyboard */,
 				DD52EABF1B0C862400E2637A /* LaunchScreen.xib */,
 				DD52EAB41B0C862400E2637A /* Supporting Files */,
+				DDEA13961B0CA86800673028 /* UIColorExtensions.swift */,
 			);
 			path = FriendsGlue;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				DD52EADE1B0C93D000E2637A /* FriendCell.swift in Sources */,
 				33627C6D1B0C9B8C0052C862 /* Event.swift in Sources */,
 				33627C6B1B0C9A870052C862 /* EventCellTableViewCell.swift in Sources */,
+				DDEA13971B0CA86800673028 /* UIColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

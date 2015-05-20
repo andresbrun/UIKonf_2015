@@ -127,10 +127,10 @@
             </objects>
             <point key="canvasLocation" x="-923" y="284"/>
         </scene>
-        <!--Friends View Controller-->
+        <!--Pick friends!-->
         <scene sceneID="efp-tQ-2AX">
             <objects>
-                <tableViewController id="4Qh-N3-fku" customClass="FriendsViewController" customModule="FriendsGlue" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Pick friends!" id="4Qh-N3-fku" customClass="FriendsViewController" customModule="FriendsGlue" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="FQC-d6-89b">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,6 +144,10 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="friend_icon" translatesAutoresizingMaskIntoConstraints="NO" id="82B-Wc-TLd">
                                             <rect key="frame" x="8" y="8" width="44" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="ATc-XU-p2Q"/>
+                                                <constraint firstAttribute="height" constant="44" id="Yf9-ZN-AUY"/>
+                                            </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJP-i0-ncU">
                                             <rect key="frame" x="60" y="19" width="95" height="21"/>
@@ -152,6 +156,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="oJP-i0-ncU" firstAttribute="leading" secondItem="82B-Wc-TLd" secondAttribute="trailing" constant="8" id="8Tm-Af-C3h"/>
                                         <constraint firstAttribute="centerY" secondItem="82B-Wc-TLd" secondAttribute="centerY" id="Dl3-vj-fDC"/>
@@ -160,6 +165,7 @@
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="oJP-i0-ncU" secondAttribute="trailing" constant="10" id="t31-jS-Kn7"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.61960784310000006" green="0.80000000000000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="icon" destination="82B-Wc-TLd" id="vvu-Ls-jTk"/>
