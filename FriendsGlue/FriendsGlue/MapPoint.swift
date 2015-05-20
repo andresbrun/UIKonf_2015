@@ -23,4 +23,5 @@ class MapPoint: NSObject, MKAnnotation {
   var subtitle: String {
     return address
   }
+
 }

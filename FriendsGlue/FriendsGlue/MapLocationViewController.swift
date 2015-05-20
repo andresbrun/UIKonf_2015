@@ -23,8 +23,9 @@ class MapLocationViewController: UIViewController, MKMapViewDelegate {
       mapView.showsUserLocation = true
       mapView.setUserTrackingMode(.Follow, animated: true)
       mapView.userLocation.title = "You"
-      let anno = get_point()
-      mapView.addAnnotation(anno)
+      var gesture = UILongPressGestureRecognizer(target: self, action: "longPressed:")
+      gesture.minimumPressDuration = 0.7
+      self.view.addGestureRecognizer(gesture)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,18 +33,31 @@ class MapLocationViewController: UIViewController, MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
   
-//  TO REMOVE, just fake Location to draw it on the map
-  func get_point() -> MapPoint {
-    let coord = CLLocationCoordinate2DMake( 52.500578,13.4147954)
-    return MapPoint(title: "UIKonf2015", address: "adress", coordinate: coord)
+  func longPressed(longPress: UIGestureRecognizer) {
+    if (longPress.state == UIGestureRecognizerState.Ended) {
+      
+    }else if (longPress.state == UIGestureRecognizerState.Began) {
+      let touchEvenPoint = longPress.locationInView(self.view)
+      mapView.removeAnnotations(mapView.annotations)
+      addPointToMap(touchEvenPoint)
+    }
   }
-
+  
+  func addPointToMap(point: CGPoint) {
+    let coord = mapView.convertPoint(point, toCoordinateFromView: self.mapView)
+    let mappoint = MapPoint(title: "UIKonf2015", address: "adress", coordinate: coord)
+    mapView.addAnnotation(mappoint)
+    mapView.selectAnnotation(mappoint, animated: true)
+  }
+  
+  
   func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
     if let annotation = annotation as? MapPoint {
       var view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "Location")
       view.canShowCallout = true
-      view.calloutOffset = CGPoint(x: -10, y: 10)
-      view.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
+      view.calloutOffset = CGPoint(x: -20, y: 20)
+      view.setSelected(true, animated: true)
+      view.selected = true
       return view
     }
     return nil
