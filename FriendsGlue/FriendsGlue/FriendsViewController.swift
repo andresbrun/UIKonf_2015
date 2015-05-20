@@ -17,10 +17,11 @@ class FriendsViewController: UITableViewController, UIActionSheetDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addressBook.fieldsMask = .CompositeName | .Photo | .Emails | .Phones | .Thumbnail | .SocialProfiles
         addressBook.loadContacts(
             { (contacts: [AnyObject]!, error: NSError!) in
                 if let contactsValue = contacts as? [APContact] {
-                    self.contactsRetrieved = contactsValue.filter { contact in return contact.firstName != nil && contact.lastName != nil}
+                    self.contactsRetrieved = contactsValue.filter { contact in return contact.compositeName != nil}.sorted { $0.compositeName < $1.compositeName }
                     self.tableView.reloadData()
                 }
         })
@@ -41,10 +42,10 @@ class FriendsViewController: UITableViewController, UIActionSheetDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as! FriendCell
 
         let contact: APContact = contactsRetrieved[indexPath.row]
-        if (contact.photo != nil) {
-            cell.icon.image = contact.photo
+        if (contact.thumbnail != nil) {
+            cell.icon.image = contact.thumbnail
         }
-        cell.name.text = "\(contact.lastName), \(contact.firstName)"
+        cell.name.text = "\(contact.compositeName)"
 
         return cell
     }

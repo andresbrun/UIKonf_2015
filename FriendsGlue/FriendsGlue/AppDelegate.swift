@@ -16,6 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        UINavigationBar.appearance().tintColor = UIColor.cDarkBlue()
+        UINavigationBar.appearance().barTintColor = UIColor.cBlue()
+        
+        
+        let textTitleOptions = [NSForegroundColorAttributeName : UIColor.cDarkBlue()]
+        UINavigationBar.appearance().titleTextAttributes = textTitleOptions
+        
+        UITableView.appearance().backgroundColor = UIColor.cGrey()
+        
+        
         return true
     }
 

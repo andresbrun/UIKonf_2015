@@ -116,6 +116,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YMQ-LA-qpc">
                             <connections>
                                 <action selector="didTapAdd:" destination="BYZ-38-t0r" id="LSQ-Tl-U4l"/>
+                                <segue destination="ZXP-q1-PDX" kind="presentation" id="pOd-lq-G7B"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -127,10 +128,76 @@
             </objects>
             <point key="canvasLocation" x="-923" y="284"/>
         </scene>
-        <!--Friends View Controller-->
+        <!--Select a location-->
+        <scene sceneID="q19-oI-jdx">
+            <objects>
+                <viewController id="q3Q-1h-3ZJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r6d-fJ-C7s"/>
+                        <viewControllerLayoutGuide type="bottom" id="lae-2P-5yD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NC8-g0-BRb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7NR-lY-cWb">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7NR-lY-cWb" secondAttribute="trailing" id="8Fh-uW-qAV"/>
+                            <constraint firstItem="7NR-lY-cWb" firstAttribute="leading" secondItem="NC8-g0-BRb" secondAttribute="leading" id="I43-qv-nGe"/>
+                            <constraint firstItem="lae-2P-5yD" firstAttribute="top" secondItem="7NR-lY-cWb" secondAttribute="bottom" id="RrK-oX-RoZ"/>
+                            <constraint firstItem="7NR-lY-cWb" firstAttribute="top" secondItem="NC8-g0-BRb" secondAttribute="top" id="vKg-bB-Mg7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select a location" id="ZiK-sX-cDC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="JTf-Lx-qCq"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gZJ-pY-0Gs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="589" y="1038"/>
+        </scene>
+        <!--Event Creator View Controller-->
+        <scene sceneID="nOt-4F-p9h">
+            <objects>
+                <viewController id="U3k-j9-LRz" customClass="EventCreatorViewController" customModule="FriendsGlue" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gq6-rI-mAW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jgf-kR-DJF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kCM-bI-2AV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUT-fo-szb">
+                                <rect key="frame" x="249" y="105" width="102" height="30"/>
+                                <state key="normal" title="Select location">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="q3Q-1h-3ZJ" kind="show" id="zq7-Dy-lBg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="VUT-fo-szb" secondAttribute="centerX" id="2He-xj-61B"/>
+                            <constraint firstAttribute="centerY" secondItem="VUT-fo-szb" secondAttribute="centerY" constant="180" id="pGO-94-4HG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gfm-Yy-FS1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3CR-J4-LLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="589" y="284"/>
+        </scene>
+        <!--Pick friends!-->
         <scene sceneID="efp-tQ-2AX">
             <objects>
-                <tableViewController id="4Qh-N3-fku" customClass="FriendsViewController" customModule="FriendsGlue" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Pick friends!" id="4Qh-N3-fku" customClass="FriendsViewController" customModule="FriendsGlue" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="FQC-d6-89b">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,6 +211,10 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="friend_icon" translatesAutoresizingMaskIntoConstraints="NO" id="82B-Wc-TLd">
                                             <rect key="frame" x="8" y="8" width="44" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="ATc-XU-p2Q"/>
+                                                <constraint firstAttribute="height" constant="44" id="Yf9-ZN-AUY"/>
+                                            </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJP-i0-ncU">
                                             <rect key="frame" x="60" y="19" width="95" height="21"/>
@@ -152,6 +223,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="oJP-i0-ncU" firstAttribute="leading" secondItem="82B-Wc-TLd" secondAttribute="trailing" constant="8" id="8Tm-Af-C3h"/>
                                         <constraint firstAttribute="centerY" secondItem="82B-Wc-TLd" secondAttribute="centerY" id="Dl3-vj-fDC"/>
@@ -160,6 +232,7 @@
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="oJP-i0-ncU" secondAttribute="trailing" constant="10" id="t31-jS-Kn7"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.61960784310000006" green="0.80000000000000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="icon" destination="82B-Wc-TLd" id="vvu-Ls-jTk"/>
@@ -176,6 +249,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A0H-4Q-Xz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1610" y="971"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dzb-X1-yFw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZXP-q1-PDX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MAY-dG-xrz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="U3k-j9-LRz" kind="relationship" relationship="rootViewController" id="YXi-7j-tR4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xFW-yr-OML" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-183" y="284"/>
         </scene>
     </scenes>
     <resources>

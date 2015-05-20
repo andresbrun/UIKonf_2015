@@ -10,7 +10,7 @@
 		33627C6B1B0C9A870052C862 /* EventCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33627C6A1B0C9A870052C862 /* EventCellTableViewCell.swift */; };
 		33627C6D1B0C9B8C0052C862 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33627C6C1B0C9B8C0052C862 /* Event.swift */; };
 		33627C701B0C9BA40052C862 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33627C6F1B0C9BA40052C862 /* User.swift */; };
-		33627C721B0CA0E90052C862 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33627C711B0CA0E90052C862 /* APIClient.swift */; };
+		4CE49B991B0CA2910005E3FE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE49B981B0CA2910005E3FE /* MapKit.framework */; };
 		DD52EAB71B0C862400E2637A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EAB61B0C862400E2637A /* AppDelegate.swift */; };
 		DD52EAB91B0C862400E2637A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EAB81B0C862400E2637A /* ViewController.swift */; };
 		DD52EABC1B0C862400E2637A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD52EABA1B0C862400E2637A /* Main.storyboard */; };
@@ -20,6 +20,9 @@
 		DD52EAD71B0C8BEF00E2637A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DD52EAD61B0C8BEF00E2637A /* Podfile */; };
 		DD52EADB1B0C8DCB00E2637A /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EADA1B0C8DCB00E2637A /* FriendsViewController.swift */; };
 		DD52EADE1B0C93D000E2637A /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EADD1B0C93D000E2637A /* FriendCell.swift */; };
+		DDEA13971B0CA86800673028 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA13961B0CA86800673028 /* UIColorExtensions.swift */; };
+		DDEA13991B0CAB1A00673028 /* EventCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA13981B0CAB1A00673028 /* EventCreatorViewController.swift */; };
+		DDEA139B1B0CAE1300673028 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDEA139A1B0CAE1300673028 /* MapKit.framework */; };
 		EE69CA3D2536128A18B2E43C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC4613F5292529C3F92D003 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +41,7 @@
 		33627C6A1B0C9A870052C862 /* EventCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCellTableViewCell.swift; sourceTree = "<group>"; };
 		33627C6C1B0C9B8C0052C862 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		33627C6F1B0C9BA40052C862 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		33627C711B0CA0E90052C862 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		4CE49B981B0CA2910005E3FE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		53BC29D6561D18FCBFCF4EEF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B468C458AB36ACF3081DDCA3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DD52EAB11B0C862400E2637A /* FriendsGlue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendsGlue.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +59,9 @@
 		DD52EADA1B0C8DCB00E2637A /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		DD52EADC1B0C8FA100E2637A /* FriendsGlue-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FriendsGlue-Bridging-Header.h"; sourceTree = "<group>"; };
 		DD52EADD1B0C93D000E2637A /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		DDEA13961B0CA86800673028 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		DDEA13981B0CAB1A00673028 /* EventCreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreatorViewController.swift; sourceTree = "<group>"; };
+		DDEA139A1B0CAE1300673028 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CE49B991B0CA2910005E3FE /* MapKit.framework in Frameworks */,
 				EE69CA3D2536128A18B2E43C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +96,7 @@
 		7F1446DAD4783EFA94FD3C19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4CE49B981B0CA2910005E3FE /* MapKit.framework */,
 				DD52EAD81B0C8C9F00E2637A /* AddressBook.framework */,
 				1FC4613F5292529C3F92D003 /* libPods.a */,
 			);
@@ -140,6 +148,8 @@
 				DD52EABA1B0C862400E2637A /* Main.storyboard */,
 				DD52EABF1B0C862400E2637A /* LaunchScreen.xib */,
 				DD52EAB41B0C862400E2637A /* Supporting Files */,
+				DDEA13961B0CA86800673028 /* UIColorExtensions.swift */,
+				DDEA13981B0CAB1A00673028 /* EventCreatorViewController.swift */,
 			);
 			path = FriendsGlue;
 			sourceTree = "<group>";
@@ -220,6 +230,11 @@
 				TargetAttributes = {
 					DD52EAB01B0C862400E2637A = {
 						CreatedOnToolsVersion = 6.3.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					DD52EAC51B0C862400E2637A = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -311,8 +326,10 @@
 				33627C721B0CA0E90052C862 /* APIClient.swift in Sources */,
 				DD52EAB71B0C862400E2637A /* AppDelegate.swift in Sources */,
 				DD52EADE1B0C93D000E2637A /* FriendCell.swift in Sources */,
+				DDEA13991B0CAB1A00673028 /* EventCreatorViewController.swift in Sources */,
 				33627C6D1B0C9B8C0052C862 /* Event.swift in Sources */,
 				33627C6B1B0C9A870052C862 /* EventCellTableViewCell.swift in Sources */,
+				DDEA13971B0CA86800673028 /* UIColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
