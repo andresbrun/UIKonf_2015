@@ -16,7 +16,6 @@
 		4CE49B9B1B0CAF170005E3FE /* MapLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE49B9A1B0CAF170005E3FE /* MapLocationViewController.swift */; };
 		4CE49B9D1B0CB3500005E3FE /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE49B9C1B0CB3500005E3FE /* MapPoint.swift */; };
 		DD52EAB71B0C862400E2637A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EAB61B0C862400E2637A /* AppDelegate.swift */; };
-		DD52EAB91B0C862400E2637A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EAB81B0C862400E2637A /* ViewController.swift */; };
 		DD52EABC1B0C862400E2637A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD52EABA1B0C862400E2637A /* Main.storyboard */; };
 		DD52EABE1B0C862400E2637A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD52EABD1B0C862400E2637A /* Images.xcassets */; };
 		DD52EAC11B0C862400E2637A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD52EABF1B0C862400E2637A /* LaunchScreen.xib */; };
@@ -24,6 +23,7 @@
 		DD52EAD71B0C8BEF00E2637A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DD52EAD61B0C8BEF00E2637A /* Podfile */; };
 		DD52EADB1B0C8DCB00E2637A /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EADA1B0C8DCB00E2637A /* FriendsViewController.swift */; };
 		DD52EADE1B0C93D000E2637A /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EADD1B0C93D000E2637A /* FriendCell.swift */; };
+		DD6DD82D1B0CCA300074EC96 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DD82C1B0CCA300074EC96 /* EventListViewController.swift */; };
 		DDEA13971B0CA86800673028 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA13961B0CA86800673028 /* UIColorExtensions.swift */; };
 		DDEA13991B0CAB1A00673028 /* EventCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA13981B0CAB1A00673028 /* EventCreatorViewController.swift */; };
 		EE69CA3D2536128A18B2E43C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC4613F5292529C3F92D003 /* libPods.a */; };
@@ -54,7 +54,6 @@
 		DD52EAB11B0C862400E2637A /* FriendsGlue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendsGlue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD52EAB51B0C862400E2637A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD52EAB61B0C862400E2637A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DD52EAB81B0C862400E2637A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DD52EABB1B0C862400E2637A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD52EABD1B0C862400E2637A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DD52EAC01B0C862400E2637A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		DD52EADA1B0C8DCB00E2637A /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		DD52EADC1B0C8FA100E2637A /* FriendsGlue-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FriendsGlue-Bridging-Header.h"; sourceTree = "<group>"; };
 		DD52EADD1B0C93D000E2637A /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		DD6DD82C1B0CCA300074EC96 /* EventListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		DDEA13961B0CA86800673028 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		DDEA13981B0CAB1A00673028 /* EventCreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreatorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,7 +146,6 @@
 				33E79F721B0CBA2700EC2B41 /* APIClient.swift */,
 				33E79F731B0CBA2700EC2B41 /* Friend.swift */,
 				DD52EAB61B0C862400E2637A /* AppDelegate.swift */,
-				DD52EAB81B0C862400E2637A /* ViewController.swift */,
 				33627C6A1B0C9A870052C862 /* EventCellTableViewCell.swift */,
 				DD52EADA1B0C8DCB00E2637A /* FriendsViewController.swift */,
 				DD52EADD1B0C93D000E2637A /* FriendCell.swift */,
@@ -159,6 +158,7 @@
 				DDEA13981B0CAB1A00673028 /* EventCreatorViewController.swift */,
 				4CE49B9A1B0CAF170005E3FE /* MapLocationViewController.swift */,
 				4CE49B9C1B0CB3500005E3FE /* MapPoint.swift */,
+				DD6DD82C1B0CCA300074EC96 /* EventListViewController.swift */,
 			);
 			path = FriendsGlue;
 			sourceTree = "<group>";
@@ -329,7 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD52EAB91B0C862400E2637A /* ViewController.swift in Sources */,
+				DD6DD82D1B0CCA300074EC96 /* EventListViewController.swift in Sources */,
 				33627C701B0C9BA40052C862 /* User.swift in Sources */,
 				DD52EADB1B0C8DCB00E2637A /* FriendsViewController.swift in Sources */,
 				33E79F751B0CBA2700EC2B41 /* Friend.swift in Sources */,
