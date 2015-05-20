@@ -126,7 +126,7 @@
         <!--Select a location-->
         <scene sceneID="q19-oI-jdx">
             <objects>
-                <viewController id="q3Q-1h-3ZJ" sceneMemberID="viewController">
+                <viewController id="q3Q-1h-3ZJ" customClass="MapLocationViewController" customModule="FriendsGlue" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r6d-fJ-C7s"/>
                         <viewControllerLayoutGuide type="bottom" id="lae-2P-5yD"/>
@@ -150,6 +150,9 @@
                     <navigationItem key="navigationItem" title="Select a location" id="ZiK-sX-cDC">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="JTf-Lx-qCq"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="7NR-lY-cWb" id="i0j-f6-PJ9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZJ-pY-0Gs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
