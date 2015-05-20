@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33627C6B1B0C9A870052C862 /* EventCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33627C6A1B0C9A870052C862 /* EventCellTableViewCell.swift */; };
 		DD52EAB71B0C862400E2637A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EAB61B0C862400E2637A /* AppDelegate.swift */; };
 		DD52EAB91B0C862400E2637A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EAB81B0C862400E2637A /* ViewController.swift */; };
 		DD52EABC1B0C862400E2637A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD52EABA1B0C862400E2637A /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		1FC4613F5292529C3F92D003 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		33627C6A1B0C9A870052C862 /* EventCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCellTableViewCell.swift; sourceTree = "<group>"; };
 		53BC29D6561D18FCBFCF4EEF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B468C458AB36ACF3081DDCA3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DD52EAB11B0C862400E2637A /* FriendsGlue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendsGlue.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,7 @@
 				DD52EAB61B0C862400E2637A /* AppDelegate.swift */,
 				DD52EAB81B0C862400E2637A /* ViewController.swift */,
 				DD52EABA1B0C862400E2637A /* Main.storyboard */,
+				33627C6A1B0C9A870052C862 /* EventCellTableViewCell.swift */,
 				DD52EADA1B0C8DCB00E2637A /* FriendsViewController.swift */,
 				DD52EABD1B0C862400E2637A /* Images.xcassets */,
 				DD52EABF1B0C862400E2637A /* LaunchScreen.xib */,
@@ -289,6 +292,7 @@
 				DD52EADB1B0C8DCB00E2637A /* FriendsViewController.swift in Sources */,
 				DD52EAB71B0C862400E2637A /* AppDelegate.swift in Sources */,
 				DD52EADE1B0C93D000E2637A /* FriendCell.swift in Sources */,
+				33627C6B1B0C9A870052C862 /* EventCellTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
