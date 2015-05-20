@@ -68,7 +68,7 @@ struct Event {
     
     private func toTapGlueMetadata() -> Dictionary<String, AnyObject> {
         var metadata = Dictionary<String, AnyObject>()
-        metadata["friendCount"] = friends.count
+        metadata["friendCount"] = String(friends.count)
 //        metadata["friendIDs"] = friends.map( {
 //            if let emailValue = $0.emails[0] as? String {
 //                return emailValue
