@@ -14,64 +14,92 @@ class APIClient {
     var sessionToken: String?
     static let sharedInstance = APIClient()
     
-    func requestSessionToken(success: (() -> Void), failure: ((NSError)? -> Void)?) {
+    func createTestUser(success: (() -> Void), failure: ((AnyObject)? -> Void)?) {
+        let request = authenticatedMutableURLRequest("https://api.tapglue.com/0.2/users?withLogin=true", httpMethod: "POST")
+        
         let parameters = [
-            "user_name": "Demo User",
+            "user_name": "FriendsGlue",
             "first_name": "John",
             "last_name": "Smith",
             "email": "bananakit@github.com",
             "password": "password"
         ]
         
-        let request = authenticatedMutableURLRequest("https://api.tapglue.com/0.2/users/create?withLogin=true", httpMethod: "POST")
         let postData = NSJSONSerialization.dataWithJSONObject(parameters, options: nil, error: nil)
         request.HTTPBody = postData
-
+        
         self.request(request, success: { [unowned self] (json, response) -> Void in
             println(json)
             
-            if let session = json["session_token"] as? String {
-                self.sessionToken = session
-                println("token \(self.sessionToken)")
-            }
-            else {
-                println("no token...")
+            if let jsonValue = json as? Dictionary<String, AnyObject> {
+                if let session = jsonValue["session_token"] as? String {
+                    self.sessionToken = session
+                    println("token \(self.sessionToken)")
+                }
+                else {
+                    println("no token...")
+                }
             }
             success()
-        }, failure: failure)
+            }, failure: failure)
     }
     
+    func requestSessionToken(success: (() -> Void), failure: ((AnyObject)? -> Void)?) {
+        let request = authenticatedMutableURLRequest("https://api.tapglue.com/0.2/user/login", httpMethod: "POST")
+        
+        let parameters = [
+            "email": "bananakit@github.com",
+            "password": "password"
+        ]
+        let postData = NSJSONSerialization.dataWithJSONObject(parameters, options: nil, error: nil)
+        request.HTTPBody = postData
+        
+        self.request(request, success: { [unowned self] (json, response) -> Void in
+            println(json)
+            
+            if let jsonValue = json as? Dictionary<String, AnyObject> {
+                if let session = jsonValue["session_token"] as? String {
+                    self.sessionToken = session
+                    println("token \(self.sessionToken)")
+                }
+                else {
+                    println("no token...")
+                }
+            }
+            success()
+            }, failure: failure)
+    }
     
-    private func request(request: NSURLRequest, success: ((json: Dictionary<String, AnyObject>, response: NSHTTPURLResponse?) -> Void)?, failure: ((NSError)? -> Void)?) {
+    private func request(request: NSURLRequest, success: ((json: AnyObject?, response: NSHTTPURLResponse?) -> Void)?, failure: ((AnyObject)? -> Void)?) {
         let session = NSURLSession.sharedSession()
         let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-            if (error != nil) {
-                println(error)
+            
+            var parseError: NSError?
+            let parsedObject = NSJSONSerialization.JSONObjectWithData(data,
+                options: NSJSONReadingOptions.AllowFragments,
+                error:&parseError)
+            
+            if let httpResponse = response as? NSHTTPURLResponse {
+                println("httpResponse")
+                println(httpResponse)
                 
-                if let failureBlock = failure {
-                    failureBlock(error)
-                }
-            } else {
-                var parsedObject = Dictionary<String, AnyObject>()
-                if let httpResponse = response as? NSHTTPURLResponse {
-                    println("httpResponse")
-                    println(httpResponse)
-                    
-                    var parseError: NSError?
-                    parsedObject = NSJSONSerialization.JSONObjectWithData(data,
-                        options: NSJSONReadingOptions.AllowFragments,
-                        error:&parseError) as! Dictionary<String, AnyObject>
-                    
+                if (httpResponse.statusCode >= 100 && httpResponse.statusCode < 300) {
                     println("success")
                     if let successBlock = success {
                         successBlock(json: parsedObject, response: httpResponse)
                     }
+                    
+                    return
+                }
+            }
+            
+            println("failure")
+            if let failureBlock = failure {
+                if (error != nil) {
+                    failureBlock(error)
                 }
                 else {
-                    println("failure")
-                    if let failureBlock = failure {
-                        failureBlock(nil)
-                    }
+                    failureBlock(parsedObject)
                 }
             }
         })
@@ -85,7 +113,7 @@ class APIClient {
             basicAuthString + sessionTokenValue
         }
         println("basicAuthString: \(basicAuthString)")
-
+        
         let basicAuthData = basicAuthString.dataUsingEncoding(NSUTF8StringEncoding)
         let base64EncodedCredential = basicAuthData!.base64EncodedStringWithOptions(nil)
         let authString = "Basic \(base64EncodedCredential)"
