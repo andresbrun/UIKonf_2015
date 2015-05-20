@@ -20,7 +20,7 @@ class FriendsViewController: UITableViewController, UIActionSheetDelegate {
         addressBook.loadContacts(
             { (contacts: [AnyObject]!, error: NSError!) in
                 if let contactsValue = contacts as? [APContact] {
-                    self.contactsRetrieved = contactsValue.filter { contact in return contact.firstName != nil && contact.lastName != nil}
+                    self.contactsRetrieved = contactsValue.filter { contact in return contact.firstName != nil && contact.lastName != nil}.sorted { $0.lastName < $1.lastName }
                     self.tableView.reloadData()
                 }
         })
