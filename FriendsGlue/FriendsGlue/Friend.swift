@@ -1,4 +1,4 @@
-§//
+//
 //  Friend.swift
 //  FriendsGlue
 //
