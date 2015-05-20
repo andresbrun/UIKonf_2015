@@ -29,7 +29,21 @@ class EventListViewController: UIViewController, UITableViewDataSource, UITableV
         Event.createEvent("Drink a beer", locationName: "Mitte", latitude: nil, longitude: nil, date: NSDate().dateByAddingTimeInterval(3600*24*1), friends: [])
     ]
     
-    override func viewWillAppear(animated: Bool) {
+    var refreshControl:UIRefreshControl!
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl.tintColor = UIColor.cDarkBlue()
+        self.tableView.addSubview(refreshControl)
+    }
+    
+    func refresh(sender:AnyObject)
+    {
         APIClient.sharedInstance.requestSessionToken({ () -> Void in
             println("login success")
             APIClient.sharedInstance.listEvents({ (events) -> Void in
@@ -38,14 +52,23 @@ class EventListViewController: UIViewController, UITableViewDataSource, UITableV
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.tableView.reloadData()
-
+                    self.refreshControl.endRefreshing()
+                    
                 })
                 }, failure: { (_) -> Void in
                     println("events: failure")
+                    self.refreshControl.endRefreshing()
             })
             }, failure: { (error) -> Void in
                 println("login failure \(error)")
+                self.refreshControl.endRefreshing()
         })
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+       super.viewWillAppear(animated)
+        
+        refresh(self)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -68,7 +91,7 @@ class EventListViewController: UIViewController, UITableViewDataSource, UITableV
         
         let formatter = NSDateFormatter()
         formatter.dateStyle = .ShortStyle
-        formatter.timeStyle = .ShortStyle
+        formatter.timeStyle = .NoStyle
         cell.timeLabel.text = formatter.stringFromDate(currentEvent.date ?? NSDate())
         
         

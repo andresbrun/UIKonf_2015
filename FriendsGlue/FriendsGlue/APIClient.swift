@@ -68,10 +68,15 @@ class APIClient {
         request(urlRequest, success: { [unowned self] (json, response) -> Void in
             if let jsonValue = json as? Dictionary<String, AnyObject> {
                 let e = Event.eventFrom(json: jsonValue)
-                success(event: e)
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    success(event: e)
+                })
+                
             }
             else {
-                success(event: nil)
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    success(event: nil)
+                })
             }}, failure: failure)
     }
     
