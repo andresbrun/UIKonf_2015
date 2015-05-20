@@ -8,13 +8,6 @@
 
 import UIKit
 
-struct EventData {
-    var location: AnyObject?
-    var subject: String?
-    var date: NSDate?
-    var friends: [APContact]
-}
-
 class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var whatTextField: UITextField!
@@ -25,7 +18,7 @@ class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITex
     
     let actionTypes = ["Play a Sport", "Drink a beer", "Watch a Film", "Watch a Game"]
     let datePicker = UIDatePicker()
-    var eventData = EventData(location: nil, subject: "", date: nil, friends: [])
+    var eventData = Event.createEvent(nil, locationName: nil, latitude: nil, longitude: nil, date: nil, friends: [])
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -64,7 +57,7 @@ class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITex
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         if actionSheet == whatTextField.inputView {
             whatTextField.text = actionTypes[buttonIndex]
-            eventData.subject = actionTypes[buttonIndex]
+            eventData.verb = actionTypes[buttonIndex]
         }
     }
     
@@ -86,7 +79,7 @@ class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITex
     
     @IBAction func save(sender: AnyObject) {
         
-        // Create event
+        // Create event. Call API
         
         // Alert
         UIAlertView(title: "Yeah!", message: "The event was created!", delegate: nil, cancelButtonTitle: "Thanks!").show()
@@ -102,7 +95,7 @@ class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITex
         }
         
         if let locationVC = segue.destinationViewController as? MapLocationViewController {
-            locationVC.whatContext = eventData.subject
+            locationVC.whatContext = eventData.verb
             locationVC.successClosure = { }
         }
     }
