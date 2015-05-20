@@ -43,8 +43,8 @@ struct Event {
         let longitude = json["longitude"] as? Float
         
         var date: NSDate?
-        if let metadataValue = json["longitude"] as? Dictionary<String, AnyObject> {
-            if let dateVale = metadataValue["longitude"] as? String {
+        if let metadataValue = json["metadata"] as? Dictionary<String, AnyObject> {
+            if let dateVale = metadataValue["date"] as? String {
                 date = EventHelper.dateFormatter.dateFromString(dateVale)
             }
         }
