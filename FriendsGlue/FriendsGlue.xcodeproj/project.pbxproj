@@ -129,14 +129,14 @@
 			children = (
 				DD52EAB61B0C862400E2637A /* AppDelegate.swift */,
 				DD52EAB81B0C862400E2637A /* ViewController.swift */,
-				DD52EABA1B0C862400E2637A /* Main.storyboard */,
 				33627C6A1B0C9A870052C862 /* EventCellTableViewCell.swift */,
 				DD52EADA1B0C8DCB00E2637A /* FriendsViewController.swift */,
+				DD52EADD1B0C93D000E2637A /* FriendCell.swift */,
 				33627C6E1B0C9B910052C862 /* Model */,
 				DD52EABD1B0C862400E2637A /* Images.xcassets */,
+				DD52EABA1B0C862400E2637A /* Main.storyboard */,
 				DD52EABF1B0C862400E2637A /* LaunchScreen.xib */,
 				DD52EAB41B0C862400E2637A /* Supporting Files */,
-				DD52EADD1B0C93D000E2637A /* FriendCell.swift */,
 			);
 			path = FriendsGlue;
 			sourceTree = "<group>";
