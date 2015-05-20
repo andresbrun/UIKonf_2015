@@ -1,10 +1,10 @@
 PODS:
-  - APAddressBook (0.1.6):
-    - APAddressBook/Core (= 0.1.6)
   - APAddressBook/Core (0.1.6)
+  - APAddressBook/Swift (0.1.6):
+    - APAddressBook/Core
 
 DEPENDENCIES:
-  - APAddressBook
+  - APAddressBook/Swift
 
 SPEC CHECKSUMS:
   APAddressBook: 504c74ea416563f95fba062c0b55f859a558e54d

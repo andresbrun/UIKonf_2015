@@ -6,15 +6,15 @@
 // project.
 
 
-// APAddressBook
-#define COCOAPODS_POD_AVAILABLE_APAddressBook
-#define COCOAPODS_VERSION_MAJOR_APAddressBook 0
-#define COCOAPODS_VERSION_MINOR_APAddressBook 1
-#define COCOAPODS_VERSION_PATCH_APAddressBook 6
-
 // APAddressBook/Core
 #define COCOAPODS_POD_AVAILABLE_APAddressBook_Core
 #define COCOAPODS_VERSION_MAJOR_APAddressBook_Core 0
 #define COCOAPODS_VERSION_MINOR_APAddressBook_Core 1
 #define COCOAPODS_VERSION_PATCH_APAddressBook_Core 6
+
+// APAddressBook/Swift
+#define COCOAPODS_POD_AVAILABLE_APAddressBook_Swift
+#define COCOAPODS_VERSION_MAJOR_APAddressBook_Swift 0
+#define COCOAPODS_VERSION_MINOR_APAddressBook_Swift 1
+#define COCOAPODS_VERSION_PATCH_APAddressBook_Swift 6
 
