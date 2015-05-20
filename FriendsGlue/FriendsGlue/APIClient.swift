@@ -12,14 +12,14 @@ import Foundation
 class APIClient {
     let appToken = "eb3244b31222c1c6c13c9fb1cdd4e29d"
     var sessionToken: String?
-    
+    static let sharedInstance = APIClient()
     
     func requestSessionToken(success: (() -> Void), failure: ((NSError)? -> Void)?) {
         let parameters = [
             "user_name": "Demo User",
             "first_name": "John",
             "last_name": "Smith",
-            "email": "js@m.o",
+            "email": "bananakit@github.com",
             "password": "password"
         ]
         
@@ -32,6 +32,10 @@ class APIClient {
             
             if let session = json["session_token"] as? String {
                 self.sessionToken = session
+                println("token \(self.sessionToken)")
+            }
+            else {
+                println("no token...")
             }
             success()
         }, failure: failure)
@@ -50,6 +54,7 @@ class APIClient {
             } else {
                 var parsedObject = Dictionary<String, AnyObject>()
                 if let httpResponse = response as? NSHTTPURLResponse {
+                    println("httpResponse")
                     println(httpResponse)
                     
                     var parseError: NSError?
@@ -57,11 +62,13 @@ class APIClient {
                         options: NSJSONReadingOptions.AllowFragments,
                         error:&parseError) as! Dictionary<String, AnyObject>
                     
+                    println("success")
                     if let successBlock = success {
                         successBlock(json: parsedObject, response: httpResponse)
                     }
                 }
                 else {
+                    println("failure")
                     if let failureBlock = failure {
                         failureBlock(nil)
                     }
@@ -77,6 +84,7 @@ class APIClient {
         if let sessionTokenValue = sessionToken {
             basicAuthString + sessionTokenValue
         }
+        println("basicAuthString: \(basicAuthString)")
 
         let basicAuthData = basicAuthString.dataUsingEncoding(NSUTF8StringEncoding)
         let base64EncodedCredential = basicAuthData!.base64EncodedStringWithOptions(nil)
@@ -87,6 +95,7 @@ class APIClient {
             "content-type": "application/json",
             "authorization": authString
         ]
+        println("headers: \(headers)")
         
         var request = NSMutableURLRequest(URL: NSURL(string: urlString)!,
             cachePolicy: .UseProtocolCachePolicy,
