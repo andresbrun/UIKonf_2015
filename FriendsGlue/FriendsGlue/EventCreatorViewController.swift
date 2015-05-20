@@ -33,7 +33,6 @@ class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITex
         toolbar.setItems([UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "dateSelected:")], animated: false)
         
         whenTextField.inputAccessoryView = toolbar
-        
     }
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {

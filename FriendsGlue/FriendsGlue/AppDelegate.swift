@@ -20,12 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor.cDarkBlue()
         UINavigationBar.appearance().barTintColor = UIColor.cBlue()
         
-        APIClient.sharedInstance.requestSessionToken({ () -> Void in
-            println("login success")
-            }, failure: { (error) -> Void in
-                println("login failure \(error)")
-        })
-        
         let textTitleOptions = [NSForegroundColorAttributeName : UIColor.cDarkBlue()]
         UINavigationBar.appearance().titleTextAttributes = textTitleOptions
         

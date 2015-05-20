@@ -17,8 +17,8 @@ class EventHelper {
 }
 
 struct Event {
-    let distantID: Int?
-    let userID: Int?
+    let distantID: String?
+    let userID: String?
     var verb: String? // Event type
     var locationName: String?  // Event location name
     var latitude: Float?
@@ -35,8 +35,8 @@ struct Event {
     
     // RECEIVE
     static func eventFrom(#json: Dictionary<String, AnyObject>) -> Event {
-        let id = json["id"] as! Int
-        let userID = json["user_id"] as! Int
+        let id = json["id"] as! String
+        let userID = json["user_id"] as! String
         let verb = json["verb"] as! String
         let locationName = json["location"] as? String
         let latitude = json["latitude"] as? Float

@@ -16,6 +16,25 @@ class EventListViewController: UIViewController, UITableViewDataSource, UITableV
     var publicEventList: [Event] = []
     var privateEventList: [Event] = []
     
+    override func viewWillAppear(animated: Bool) {
+        APIClient.sharedInstance.requestSessionToken({ () -> Void in
+            println("login success")
+            APIClient.sharedInstance.listEvents({ (events) -> Void in
+                self.privateEventList = events
+                self.publicEventList = events
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.tableView.reloadData()
+
+                })
+                }, failure: { (_) -> Void in
+                    println("events: failure")
+            })
+            }, failure: { (error) -> Void in
+                println("login failure \(error)")
+        })
+    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -36,7 +55,7 @@ class EventListViewController: UIViewController, UITableViewDataSource, UITableV
         let formatter = NSDateFormatter()
         formatter.dateStyle = .ShortStyle
         formatter.timeStyle = .ShortStyle
-        cell.timeLabel.text = formatter.stringFromDate(currentEvent.date!)
+        cell.timeLabel.text = formatter.stringFromDate(currentEvent.date ?? NSDate())
         
         
         return cell

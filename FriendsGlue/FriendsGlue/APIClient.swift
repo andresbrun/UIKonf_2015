@@ -76,7 +76,7 @@ class APIClient {
     }
     
     
-    func listEvents(success: ((event: [Event]) -> Void), failure: ((AnyObject)? -> Void)?) {
+    func listEvents(success: ((events: [Event]) -> Void), failure: ((AnyObject)? -> Void)?) {
         let urlRequest = authenticatedMutableURLRequest("https://api.tapglue.com/0.2/user/events", parameters: nil)
         
         request(urlRequest, success: { [unowned self] (json, response) -> Void in
@@ -86,10 +86,10 @@ class APIClient {
                 for eventJSON in eventsJSON {
                     events.append(Event.eventFrom(json: eventJSON))
                 }
-                success(event: events)
+                success(events: events)
             }
             else {
-                success(event: events)
+                success(events: events)
             }}, failure: failure)
     }
     
