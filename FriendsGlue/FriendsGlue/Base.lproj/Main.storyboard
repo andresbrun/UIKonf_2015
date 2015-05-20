@@ -21,10 +21,10 @@
             </objects>
             <point key="canvasLocation" x="-1605" y="284"/>
         </scene>
-        <!--Event List View Controller-->
+        <!--Search an Event!-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="EventListViewController" customModule="FriendsGlue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="EventListViewController" customModule="FriendsGlue" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oyB-Yl-51X">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTableViewCell" id="Zgc-mc-Bpk" customClass="EventTableViewCell" customModule="FriendsGlue" customModuleProvider="target">
@@ -156,22 +156,51 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="sm0-YL-RPd"/>
                                 </connections>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pPh-UE-sMN">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="SdZ-OV-DVe"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hlb-cp-9v6"/>
+                                    <barButtonItem style="plain" id="F8g-AH-Fc4">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="DFh-IC-Ped">
+                                            <rect key="frame" x="238" y="8" width="123" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Friends"/>
+                                                <segment title="NearBy"/>
+                                            </segments>
+                                            <color key="tintColor" red="0.61960784310000006" green="0.80000000000000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="segmentControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="OTf-MC-r4g"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="TCG-MK-Gxj"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="oyB-Yl-51X" secondAttribute="trailing" id="2mm-em-jlT"/>
                             <constraint firstItem="oyB-Yl-51X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FGy-h8-udd"/>
+                            <constraint firstAttribute="trailing" secondItem="pPh-UE-sMN" secondAttribute="trailing" id="aBi-rs-FEh"/>
+                            <constraint firstItem="oyB-Yl-51X" firstAttribute="top" secondItem="pPh-UE-sMN" secondAttribute="bottom" id="bYP-1p-wdz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oyB-Yl-51X" secondAttribute="bottom" id="dRO-vQ-Jj2"/>
                             <constraint firstItem="oyB-Yl-51X" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="j8M-yQ-3tL"/>
                             <constraint firstItem="oyB-Yl-51X" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jKm-gO-T22"/>
+                            <constraint firstItem="pPh-UE-sMN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ksY-0N-XWp"/>
+                            <constraint firstItem="pPh-UE-sMN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wmZ-Ae-2Ud"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="j8M-yQ-3tL"/>
                                 <exclude reference="jKm-gO-T22"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="dfz-ag-Bfw">
+                    <navigationItem key="navigationItem" title="Search an Event!" id="dfz-ag-Bfw">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YMQ-LA-qpc">
                             <connections>
                                 <action selector="didTapAdd:" destination="BYZ-38-t0r" id="LSQ-Tl-U4l"/>
@@ -179,6 +208,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="DFh-IC-Ped" id="gnu-WW-cve"/>
+                        <outlet property="tableView" destination="oyB-Yl-51X" id="WIN-nc-nvN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
