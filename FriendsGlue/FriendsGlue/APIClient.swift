@@ -138,7 +138,7 @@ class APIClient {
             timeoutInterval: 10.0)
         
         if let parametersValue = parameters {
-            println("parameters: \(parameters)")
+            println("parameters: \(parametersValue)")
             let postData = NSJSONSerialization.dataWithJSONObject(parametersValue, options: nil, error: nil)
             request.HTTPBody = postData
         }
