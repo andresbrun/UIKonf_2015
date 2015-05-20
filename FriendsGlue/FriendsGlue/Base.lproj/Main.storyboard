@@ -50,7 +50,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaE-aI-b4n">
-                                                    <rect key="frame" x="95" y="40" width="41" height="24"/>
+                                                    <rect key="frame" x="29" y="40" width="41" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                                     <color key="textColor" red="0.61960784310000006" green="0.80000000000000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -68,19 +68,19 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXL-n6-M9U">
-                                                    <rect key="frame" x="74" y="43" width="13" height="21"/>
+                                                    <rect key="frame" x="8" y="43" width="13" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                     <color key="textColor" red="0.77647058820000003" green="0.8980392157" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVa-4d-ff2">
-                                                    <rect key="frame" x="144" y="43" width="12" height="21"/>
+                                                    <rect key="frame" x="78" y="43" width="12" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                     <color key="textColor" red="0.77647058820000003" green="0.8980392157" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFT-VP-VmK">
-                                                    <rect key="frame" x="164" y="40" width="71" height="24"/>
+                                                    <rect key="frame" x="98" y="40" width="71" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                                     <color key="textColor" red="0.61960784310000006" green="0.80000000000000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -88,6 +88,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="gaE-aI-b4n" firstAttribute="bottom" secondItem="oXL-n6-M9U" secondAttribute="bottom" id="5DC-c9-RR1"/>
+                                                <constraint firstItem="VIr-SU-gK8" firstAttribute="leading" secondItem="oXL-n6-M9U" secondAttribute="leading" id="5sw-P8-T7B"/>
                                                 <constraint firstItem="JFT-VP-VmK" firstAttribute="top" secondItem="gaE-aI-b4n" secondAttribute="top" id="6dE-lh-tmF"/>
                                                 <constraint firstItem="VIr-SU-gK8" firstAttribute="leading" secondItem="weC-dh-fKa" secondAttribute="leadingMargin" id="78C-76-UgI"/>
                                                 <constraint firstItem="gaE-aI-b4n" firstAttribute="baseline" secondItem="oXL-n6-M9U" secondAttribute="baseline" id="Hdd-x7-jes"/>
@@ -127,6 +128,7 @@
                                                     <exclude reference="qeg-Hq-aVP"/>
                                                     <exclude reference="r3I-ig-f8r"/>
                                                     <exclude reference="z1B-rT-Qp5"/>
+                                                    <exclude reference="m5Q-YC-9fy"/>
                                                     <exclude reference="tJp-PP-x9B"/>
                                                     <exclude reference="5DC-c9-RR1"/>
                                                     <exclude reference="Rre-22-kwH"/>

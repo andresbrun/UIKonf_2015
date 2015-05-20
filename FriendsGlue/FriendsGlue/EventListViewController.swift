@@ -13,8 +13,21 @@ class EventListViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
-    var publicEventList: [Event] = []
-    var privateEventList: [Event] = []
+    var publicEventList: [Event] = [
+        Event.createEvent("Play football", locationName: "MauerPark", latitude: nil, longitude: nil, date: NSDate().dateByAddingTimeInterval(3600*24*3), friends: []),
+        Event.createEvent("Drink a beer", locationName: "Mitte", latitude: nil, longitude: nil, date: NSDate().dateByAddingTimeInterval(3600*24*1), friends: []),
+        Event.createEvent("Go to the cinema", locationName: "Sony Center", latitude: nil, longitude: nil, date: NSDate().dateByAddingTimeInterval(3600*24*5), friends: []),
+        Event.createEvent("Watch a match", locationName: "Colisseum", latitude: nil, longitude: nil, date: NSDate().dateByAddingTimeInterval(3600*24*10), friends: []),
+        Event.createEvent("Go to the cinema", locationName: "Sony Center", latitude: nil, longitude: nil, date: NSDate().dateByAddingTimeInterval(3600*24*5), friends: []),
+        Event.createEvent("Watch a match", locationName: "At the bar", latitude: nil, longitude: nil, date: NSDate().dateByAddingTimeInterval(3600*24*10), friends: []),
+        Event.createEvent("Drink a beer", locationName: "Mitte", latitude: nil, longitude: nil, date: NSDate().dateByAddingTimeInterval(3600*24*1), friends: [])
+    ]
+    var privateEventList: [Event] = [
+        Event.createEvent("Play football", locationName: "MauerPark", latitude: nil, longitude: nil, date: NSDate().dateByAddingTimeInterval(3600*24*3), friends: []),
+        Event.createEvent("Go to the cinema", locationName: "Sony Center", latitude: nil, longitude: nil, date: NSDate().dateByAddingTimeInterval(3600*24*5), friends: []),
+        Event.createEvent("Watch a match", locationName: "At the bar", latitude: nil, longitude: nil, date: NSDate().dateByAddingTimeInterval(3600*24*10), friends: []),
+        Event.createEvent("Drink a beer", locationName: "Mitte", latitude: nil, longitude: nil, date: NSDate().dateByAddingTimeInterval(3600*24*1), friends: [])
+    ]
     
     override func viewWillAppear(animated: Bool) {
         APIClient.sharedInstance.requestSessionToken({ () -> Void in
@@ -49,7 +62,8 @@ class EventListViewController: UIViewController, UITableViewDataSource, UITableV
         let currentEvent = currentList()[indexPath.row]
         cell.locationLabel.text = currentEvent.locationName
         cell.activityLabel.text = currentEvent.verb
-        cell.peopleCountLabel.text = "\(currentEvent.friends.count) friends"
+//        cell.peopleCountLabel.text = "\(currentEvent.friends.count) friends"
+        cell.peopleCountLabel.text = "\(Int(arc4random_uniform(7)+1)) friends"
         
         
         let formatter = NSDateFormatter()
