@@ -13,6 +13,7 @@ class FriendsViewController: UITableViewController, UIActionSheetDelegate {
 
     let addressBook = APAddressBook()
     var contactsRetrieved = [APContact]()
+    var successClosure: (([APContact]) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,5 +64,19 @@ class FriendsViewController: UITableViewController, UIActionSheetDelegate {
             }
         }
     }
+    
+    func contactsSelected() -> [APContact] {
+        if let selectedIndexPath = tableView.indexPathsForSelectedRows() {
+            return selectedIndexPath.map { indexPath in return self.contactsRetrieved[indexPath.row] }
+        } else {
+            return []
+        }
+    }
 
+    @IBAction func done(sender: AnyObject) {
+        navigationController?.popViewControllerAnimated(true)
+        if let success = self.successClosure {
+            success(self.contactsSelected())
+        }
+    }
 }

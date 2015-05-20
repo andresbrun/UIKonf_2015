@@ -16,13 +16,13 @@ class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITex
     @IBOutlet weak var whoTextField: UITextField!
     @IBOutlet weak var privacySegmented: UISegmentedControl!
     
-    let actionTypes = ["Sport", "Beer", "Watch a Film", "Watch a Game"]
+    let actionTypes = ["Play a Sport", "Drink a beer", "Watch a Film", "Watch a Game"]
     let datePicker = UIDatePicker()
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        let whatActionSheet = UIActionSheet(title: "Choose Activity", delegate: self, cancelButtonTitle: nil, destructiveButtonTitle: nil, otherButtonTitles: "Sport", "Beer", "Watch a Film", "Watch a Game")
+        let whatActionSheet = UIActionSheet(title: "Choose Activity", delegate: self, cancelButtonTitle: nil, destructiveButtonTitle: nil, otherButtonTitles: "Play a Sport", "Drink a beer", "Watch a Film", "Watch a Game")
         
         whatTextField.inputView = whatActionSheet
         
@@ -82,5 +82,11 @@ class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITex
         UIAlertView(title: "Yeah!", message: "The event was created!", delegate: nil, cancelButtonTitle: "Thanks!").show()
         
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let friendsVC = segue.destinationViewController as? FriendsViewController {
+            friendsVC.successClosure = { contactsSelected in self.whoTextField.text = "\(contactsSelected.count) friends" }
+        }
     }
 }
