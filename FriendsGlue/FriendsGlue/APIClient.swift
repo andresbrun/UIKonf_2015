@@ -76,6 +76,22 @@ class APIClient {
     }
     
     
+    func listEvents(success: ((event: [Event]) -> Void), failure: ((AnyObject)? -> Void)?) {
+        let urlRequest = authenticatedMutableURLRequest("https://api.tapglue.com/0.2/user/events", parameters: nil)
+        
+        request(urlRequest, success: { [unowned self] (json, response) -> Void in
+            var events = [Event]()
+            
+            if let eventsJSON = json as? [Dictionary<String, AnyObject>] {
+                for eventJSON in eventsJSON {
+                    events.append(Event.eventFrom(json: eventJSON))
+                }
+                success(event: events)
+            }
+            else {
+                success(event: events)
+            }}, failure: failure)
+    }
     
     private func request(request: NSURLRequest, success: ((json: AnyObject?, response: NSHTTPURLResponse?) -> Void)?, failure: ((AnyObject)? -> Void)?) {
         let session = NSURLSession.sharedSession()
