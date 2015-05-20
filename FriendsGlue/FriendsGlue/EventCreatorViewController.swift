@@ -88,5 +88,10 @@ class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITex
         if let friendsVC = segue.destinationViewController as? FriendsViewController {
             friendsVC.successClosure = { contactsSelected in self.whoTextField.text = "\(contactsSelected.count) friends" }
         }
+        
+        if let locationVC = segue.destinationViewController as? MapLocationViewController {
+            locationVC.whatContext = whatTextField.text
+            locationVC.successClosure = { }
+        }
     }
 }

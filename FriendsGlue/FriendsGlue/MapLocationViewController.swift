@@ -13,6 +13,8 @@ import MapKit
 class MapLocationViewController: UIViewController, MKMapViewDelegate {
 
   @IBOutlet weak var mapView: MKMapView!
+    var successClosure: (() -> ())?
+    var whatContext: String?
   
   var locationmanager = CLLocationManager()
   
