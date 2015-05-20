@@ -8,6 +8,13 @@
 
 import UIKit
 
+struct EventData {
+    var location: AnyObject?
+    var subject: String?
+    var date: NSDate?
+    var friends: [APContact]
+}
+
 class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var whatTextField: UITextField!
@@ -18,6 +25,7 @@ class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITex
     
     let actionTypes = ["Play a Sport", "Drink a beer", "Watch a Film", "Watch a Game"]
     let datePicker = UIDatePicker()
+    var eventData = EventData(location: nil, subject: "", date: nil, friends: [])
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -56,6 +64,7 @@ class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITex
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         if actionSheet == whatTextField.inputView {
             whatTextField.text = actionTypes[buttonIndex]
+            eventData.subject = actionTypes[buttonIndex]
         }
     }
     
@@ -65,6 +74,7 @@ class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITex
         formatter.dateStyle = .ShortStyle
         formatter.timeStyle = .ShortStyle
 
+        eventData.date = datePicker.date
         whenTextField.text = formatter.stringFromDate(datePicker.date)
         whenTextField.resignFirstResponder()
     }
@@ -86,11 +96,13 @@ class EventCreatorViewController: UIViewController, UIActionSheetDelegate, UITex
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let friendsVC = segue.destinationViewController as? FriendsViewController {
-            friendsVC.successClosure = { contactsSelected in self.whoTextField.text = "\(contactsSelected.count) friends" }
+            friendsVC.successClosure = { contactsSelected in
+                self.eventData.friends = contactsSelected
+                self.whoTextField.text = "\(contactsSelected.count) friends" }
         }
         
         if let locationVC = segue.destinationViewController as? MapLocationViewController {
-            locationVC.whatContext = whatTextField.text
+            locationVC.whatContext = eventData.subject
             locationVC.successClosure = { }
         }
     }
