@@ -108,11 +108,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dfz-ag-Bfw">
-                        <barButtonItem key="leftBarButtonItem" title="Friend List" id="EqL-aH-cuG">
-                            <connections>
-                                <segue destination="4Qh-N3-fku" kind="show" id="YU9-Ug-j5r"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YMQ-LA-qpc">
                             <connections>
                                 <action selector="didTapAdd:" destination="BYZ-38-t0r" id="LSQ-Tl-U4l"/>
@@ -160,7 +155,7 @@
             </objects>
             <point key="canvasLocation" x="589" y="1038"/>
         </scene>
-        <!--Event Creator View Controller-->
+        <!--Event!-->
         <scene sceneID="nOt-4F-p9h">
             <objects>
                 <viewController id="U3k-j9-LRz" customClass="EventCreatorViewController" customModule="FriendsGlue" customModuleProvider="target" sceneMemberID="viewController">
@@ -172,23 +167,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUT-fo-szb">
-                                <rect key="frame" x="249" y="105" width="102" height="30"/>
-                                <state key="normal" title="Select location">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QzV-ip-ofh">
+                                <rect key="frame" x="239" y="84" width="120" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="IqX-Cm-IPt"/>
+                                    <constraint firstAttribute="height" constant="44" id="ijW-Z0-dbc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <segue destination="q3Q-1h-3ZJ" kind="show" id="zq7-Dy-lBg"/>
+                                    <outlet property="delegate" destination="U3k-j9-LRz" id="jkT-O8-WeQ"/>
                                 </connections>
-                            </button>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Where?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qqu-Sl-hhj">
+                                <rect key="frame" x="241" y="148" width="120" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="7bY-py-iem"/>
+                                    <constraint firstAttribute="width" constant="120" id="D2S-ZS-Emo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <segue destination="q3Q-1h-3ZJ" kind="show" id="Pbe-dK-fNY"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="When?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W9D-3S-bGO">
+                                <rect key="frame" x="241" y="212" width="120" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="XeL-uD-Ec8"/>
+                                    <constraint firstAttribute="height" constant="44" id="wpb-O5-ZTM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Who?" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jpG-VW-NSk">
+                                <rect key="frame" x="239" y="276" width="120" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Mdj-pp-59S"/>
+                                    <constraint firstAttribute="height" constant="44" id="boC-P7-5Pu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="U3k-j9-LRz" id="suX-FB-AVN"/>
+                                    <segue destination="4Qh-N3-fku" kind="show" identifier="showFriendList" id="FtN-dj-W7J"/>
+                                </connections>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8pj-DA-Eex">
+                                <rect key="frame" x="241" y="340" width="120" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="8dd-bm-VQq"/>
+                                    <constraint firstAttribute="width" constant="120" id="ne8-J5-eQ3"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Public"/>
+                                    <segment title="Private"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="VUT-fo-szb" secondAttribute="centerX" id="2He-xj-61B"/>
-                            <constraint firstAttribute="centerY" secondItem="VUT-fo-szb" secondAttribute="centerY" constant="180" id="pGO-94-4HG"/>
+                            <constraint firstAttribute="centerX" secondItem="Qqu-Sl-hhj" secondAttribute="centerX" constant="-0.5" id="2eJ-3p-X6k"/>
+                            <constraint firstAttribute="centerX" secondItem="W9D-3S-bGO" secondAttribute="centerX" constant="-0.5" id="Mqs-50-YpM"/>
+                            <constraint firstAttribute="centerX" secondItem="8pj-DA-Eex" secondAttribute="centerX" constant="-0.5" id="P8C-sF-bDP"/>
+                            <constraint firstItem="QzV-ip-ofh" firstAttribute="top" secondItem="Gq6-rI-mAW" secondAttribute="bottom" constant="20" id="c3U-Hh-PPV"/>
+                            <constraint firstAttribute="centerX" secondItem="QzV-ip-ofh" secondAttribute="centerX" constant="1.5" id="hUE-FD-Vme"/>
+                            <constraint firstItem="8pj-DA-Eex" firstAttribute="top" secondItem="jpG-VW-NSk" secondAttribute="bottom" constant="20" id="hn2-HH-ZnK"/>
+                            <constraint firstItem="Qqu-Sl-hhj" firstAttribute="top" secondItem="QzV-ip-ofh" secondAttribute="bottom" constant="20" id="mfE-Cw-djv"/>
+                            <constraint firstItem="W9D-3S-bGO" firstAttribute="top" secondItem="Qqu-Sl-hhj" secondAttribute="bottom" constant="20" id="oWb-KR-Lux"/>
+                            <constraint firstItem="jpG-VW-NSk" firstAttribute="top" secondItem="W9D-3S-bGO" secondAttribute="bottom" constant="20" id="sSI-p8-5SM"/>
+                            <constraint firstAttribute="centerX" secondItem="jpG-VW-NSk" secondAttribute="centerX" constant="1.5" id="vT1-45-lj5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gfm-Yy-FS1"/>
+                    <navigationItem key="navigationItem" title="Event!" id="gfm-Yy-FS1"/>
+                    <connections>
+                        <outlet property="privacySegmented" destination="8pj-DA-Eex" id="Y2N-YN-LNO"/>
+                        <outlet property="whatTextField" destination="QzV-ip-ofh" id="eJE-vp-IzV"/>
+                        <outlet property="whenTextField" destination="W9D-3S-bGO" id="rFx-xG-CKF"/>
+                        <outlet property="whereTextfFeld" destination="Qqu-Sl-hhj" id="22U-4Z-PIZ"/>
+                        <outlet property="whoTextField" destination="jpG-VW-NSk" id="YrJ-FP-KMt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3CR-J4-LLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -248,7 +306,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A0H-4Q-Xz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1610" y="971"/>
+            <point key="canvasLocation" x="1297" y="1038"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dzb-X1-yFw">
