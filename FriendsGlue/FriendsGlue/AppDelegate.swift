@@ -27,9 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let textTitleOptions = [NSForegroundColorAttributeName : UIColor.cDarkBlue()]
         UINavigationBar.appearance().titleTextAttributes = textTitleOptions
         
-        UITableView.appearance().backgroundColor = UIColor.cGrey()
-        
-        
         return true
     }
 
