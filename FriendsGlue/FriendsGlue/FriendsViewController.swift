@@ -20,29 +20,19 @@ class FriendsViewController: UITableViewController, UIActionSheetDelegate {
         addressBook.loadContacts(
             { (contacts: [AnyObject]!, error: NSError!) in
                 if let contactsValue = contacts as? [APContact] {
-                    self.contactsRetrieved = contactsValue
+                    self.contactsRetrieved = contactsValue.filter { contact in return contact.firstName != nil && contact.lastName != nil}
                     self.tableView.reloadData()
                 }
         })
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
         return contactsRetrieved.count
     }
 
@@ -50,9 +40,10 @@ class FriendsViewController: UITableViewController, UIActionSheetDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as! FriendCell
 
-        // Configure the cell...
         let contact: APContact = contactsRetrieved[indexPath.row]
-        cell.icon.image = contact.thumbnail
+        if (contact.photo != nil) {
+            cell.icon.image = contact.photo
+        }
         cell.name.text = "\(contact.lastName), \(contact.firstName)"
 
         return cell
@@ -65,7 +56,11 @@ class FriendsViewController: UITableViewController, UIActionSheetDelegate {
     }
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        
+        if actionSheet.cancelButtonIndex == buttonIndex {
+            if let indexPath = tableView.indexPathsForSelectedRows()?.last as? NSIndexPath {
+                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            }
+        }
     }
 
 }
