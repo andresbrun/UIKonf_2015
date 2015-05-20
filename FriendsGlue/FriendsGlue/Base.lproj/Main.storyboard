@@ -156,6 +156,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="oJP-i0-ncU" firstAttribute="leading" secondItem="82B-Wc-TLd" secondAttribute="trailing" constant="8" id="8Tm-Af-C3h"/>
                                         <constraint firstAttribute="centerY" secondItem="82B-Wc-TLd" secondAttribute="centerY" id="Dl3-vj-fDC"/>
@@ -164,6 +165,7 @@
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="oJP-i0-ncU" secondAttribute="trailing" constant="10" id="t31-jS-Kn7"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.61960784310000006" green="0.80000000000000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="icon" destination="82B-Wc-TLd" id="vvu-Ls-jTk"/>
