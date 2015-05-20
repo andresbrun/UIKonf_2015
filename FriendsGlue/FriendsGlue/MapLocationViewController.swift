@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class MapLocationViewController: UIViewController {
+class MapLocationViewController: UIViewController, MKMapViewDelegate {
 
   @IBOutlet weak var mapView: MKMapView!
   
@@ -23,15 +23,32 @@ class MapLocationViewController: UIViewController {
       mapView.showsUserLocation = true
       mapView.setUserTrackingMode(.Follow, animated: true)
       mapView.userLocation.title = "You"
-      
+      let anno = get_point()
+      mapView.addAnnotation(anno)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+  
+//  TO REMOVE, just fake Location to draw it on the map
+  func get_point() -> MapPoint {
+    let coord = CLLocationCoordinate2DMake( 52.500578,13.4147954)
+    return MapPoint(title: "UIKonf2015", address: "adress", coordinate: coord)
+  }
 
+  func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    if let annotation = annotation as? MapPoint {
+      var view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "Location")
+      view.canShowCallout = true
+      view.calloutOffset = CGPoint(x: -10, y: 10)
+      view.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
+      return view
+    }
+    return nil
+  }
+  
     /*
     // MARK: - Navigation
 

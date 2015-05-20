@@ -12,6 +12,7 @@
 		33627C701B0C9BA40052C862 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33627C6F1B0C9BA40052C862 /* User.swift */; };
 		4CE49B991B0CA2910005E3FE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE49B981B0CA2910005E3FE /* MapKit.framework */; };
 		4CE49B9B1B0CAF170005E3FE /* MapLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE49B9A1B0CAF170005E3FE /* MapLocationViewController.swift */; };
+		4CE49B9D1B0CB3500005E3FE /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE49B9C1B0CB3500005E3FE /* MapPoint.swift */; };
 		DD52EAB71B0C862400E2637A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EAB61B0C862400E2637A /* AppDelegate.swift */; };
 		DD52EAB91B0C862400E2637A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52EAB81B0C862400E2637A /* ViewController.swift */; };
 		DD52EABC1B0C862400E2637A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD52EABA1B0C862400E2637A /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		33627C6F1B0C9BA40052C862 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4CE49B981B0CA2910005E3FE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4CE49B9A1B0CAF170005E3FE /* MapLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapLocationViewController.swift; sourceTree = "<group>"; };
+		4CE49B9C1B0CB3500005E3FE /* MapPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
 		53BC29D6561D18FCBFCF4EEF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B468C458AB36ACF3081DDCA3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DD52EAB11B0C862400E2637A /* FriendsGlue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendsGlue.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 				DDEA13961B0CA86800673028 /* UIColorExtensions.swift */,
 				DDEA13981B0CAB1A00673028 /* EventCreatorViewController.swift */,
 				4CE49B9A1B0CAF170005E3FE /* MapLocationViewController.swift */,
+				4CE49B9C1B0CB3500005E3FE /* MapPoint.swift */,
 			);
 			path = FriendsGlue;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				33627C6B1B0C9A870052C862 /* EventCellTableViewCell.swift in Sources */,
 				4CE49B9B1B0CAF170005E3FE /* MapLocationViewController.swift in Sources */,
 				DDEA13971B0CA86800673028 /* UIColorExtensions.swift in Sources */,
+				4CE49B9D1B0CB3500005E3FE /* MapPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
