@@ -8,17 +8,18 @@
 
 import UIKit
 
-class FriendsViewController: UITableViewController {
+
+class FriendsViewController: UITableViewController, UIActionSheetDelegate {
 
     let addressBook = APAddressBook()
-    var contactsRetrieved = [AnyObject]()
+    var contactsRetrieved = [APContact]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addressBook.loadContacts(
             { (contacts: [AnyObject]!, error: NSError!) in
-                if let contactsValue = contacts {
+                if let contactsValue = contacts as? [APContact] {
                     self.contactsRetrieved = contactsValue
                     self.tableView.reloadData()
                 }
@@ -50,55 +51,21 @@ class FriendsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as! FriendCell
 
         // Configure the cell...
-        
+        let contact: APContact = contactsRetrieved[indexPath.row]
+        cell.icon.image = contact.thumbnail
+        cell.name.text = "\(contact.lastName), \(contact.firstName)"
 
         return cell
     }
 
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let actionsheet = UIActionSheet(title: "Select channel", delegate: self, cancelButtonTitle: "No this one!", destructiveButtonTitle: nil, otherButtonTitles: "Facebook", "Twitter","SMS")
+        actionsheet.showInView(view)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

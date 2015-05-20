@@ -12,4 +12,10 @@ class FriendCell: UITableViewCell {
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var name: UILabel!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        icon.layer.masksToBounds = true
+        icon.layer.cornerRadius = CGRectGetHeight(icon.frame) * 0.5
+    }
 }
